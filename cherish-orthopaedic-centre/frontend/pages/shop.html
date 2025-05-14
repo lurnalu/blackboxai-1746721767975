@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Cherish Orthopaedic Centre</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <span class="text-2xl font-bold text-blue-600">Cherish</span>
+                        <span class="text-2xl font-bold text-gray-700">Ortho</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="appointments.html" class="text-gray-600 hover:text-blue-600">Appointments</a>
+                    <a href="shop.html" class="text-blue-600">Shop</a>
+                    <a href="education.html" class="text-gray-600 hover:text-blue-600">Resources</a>
+                    <a href="telemedicine.html" class="text-gray-600 hover:text-blue-600">Telemedicine</a>
+                    <a href="cart.html" class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="ml-1">0</span>
+                    </a>
+                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Login</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">Medical Equipment Shop</h1>
+                <p class="mt-4 text-xl text-gray-500">Quality orthopaedic equipment and supplies</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters and Search -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select id="category-filter" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">All Categories</option>
+                        <option value="braces">Braces & Supports</option>
+                        <option value="mobility">Mobility Aids</option>
+                        <option value="rehabilitation">Rehabilitation Equipment</option>
+                        <option value="footwear">Orthopedic Footwear</option>
+                    </select>
+                </div>
+                <div class="col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                    <select id="price-filter" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">All Prices</option>
+                        <option value="0-5000">Under KES 5,000</option>
+                        <option value="5000-10000">KES 5,000 - 10,000</option>
+                        <option value="10000+">Above KES 10,000</option>
+                    </select>
+                </div>
+                <div class="col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
+                    <div class="relative">
+                        <input type="text" id="search" placeholder="Search products..." class="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 pl-10">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+            <!-- Product cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contact Us</h3>
+                    <p class="text-gray-300">Email: info@cherishortho.com</p>
+                    <p class="text-gray-300">Phone: +254 XXX XXX XXX</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Services</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Shop</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-300">&copy; 2024 Cherish Orthopaedic Centre. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Template -->
+    <template id="product-template">
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <img src="" alt="" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900"></h3>
+                        <p class="mt-2 text-gray-500 text-sm"></p>
+                    </div>
+                    <span class="text-xl font-bold text-blue-600"></span>
+                </div>
+                <div class="mt-4">
+                    <span class="text-sm text-gray-500">Category: </span>
+                    <span class="text-sm font-medium text-gray-900"></span>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm text-gray-500">Stock: </span>
+                    <span class="text-sm font-medium text-gray-900"></span>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                        Add to Cart
+                    </button>
+                    <a href="#" class="text-blue-600 hover:text-blue-800">View Details</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Main JavaScript -->
+    <script>
+        // Sample product data (replace with API call)
+        const products = [
+            {
+                id: 1,
+                name: 'Knee Support Brace',
+                description: 'High-quality knee support for injury recovery and prevention',
+                price_kes: 3500.00,
+                category: 'Braces',
+                stock: 50,
+                image: '../assets/images/knee-brace.svg'
+            },
+            {
+                id: 2,
+                name: 'Orthopedic Walking Boot',
+                description: 'Medical boot for foot and ankle injury recovery',
+                price_kes: 8500.00,
+                category: 'Footwear',
+                stock: 30,
+                image: '../assets/images/walking-boot.svg'
+            }
+        ];
+
+        // Initialize product grid
+        function initializeProducts() {
+            const grid = document.getElementById('product-grid');
+            const template = document.getElementById('product-template');
+
+            products.forEach(product => {
+                const clone = template.content.cloneNode(true);
+                
+                // Set product details
+                clone.querySelector('img').src = product.image;
+                clone.querySelector('img').alt = product.name;
+                clone.querySelector('h3').textContent = product.name;
+                clone.querySelector('p').textContent = product.description;
+                clone.querySelector('.text-blue-600').textContent = `KES ${product.price_kes.toLocaleString()}`;
+                clone.querySelector('.text-gray-900').textContent = product.category;
+                clone.querySelector('span:last-child').textContent = `${product.stock} available`;
+
+                // Add event listeners
+                const addToCartBtn = clone.querySelector('button');
+                addToCartBtn.addEventListener('click', () => addToCart(product));
+
+                const viewDetailsLink = clone.querySelector('a');
+                viewDetailsLink.href = `product.html?id=${product.id}`;
+
+                grid.appendChild(clone);
+            });
+        }
+
+        // Add to cart functionality
+        function addToCart(product) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Create a copy of the product to avoid reference issues
+            const productCopy = { ...product, quantity: 1 };
+            
+            // Check if product already exists in cart
+            const existingItem = cart.find(item => item.id === product.id);
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                cart.push(productCopy);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Show confirmation message
+            const message = document.createElement('div');
+            message.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-md shadow-lg';
+            message.textContent = 'Item added to cart';
+            document.body.appendChild(message);
+            setTimeout(() => message.remove(), 2000);
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeProducts();
+            updateCartCount();
+
+            // Filter functionality
+            document.getElementById('category-filter').addEventListener('change', filterProducts);
+            document.getElementById('price-filter').addEventListener('change', filterProducts);
+            document.getElementById('search').addEventListener('input', filterProducts);
+        });
+
+        // Filter products
+        function filterProducts() {
+            // Implementation for filtering products
+            // This would typically involve API calls with the filter parameters
+            console.log('Filtering products...');
+        }
+    </script>
+</body>
+</html>
