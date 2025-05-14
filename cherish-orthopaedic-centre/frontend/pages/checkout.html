@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cherish Orthopaedic Centre</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <span class="text-2xl font-bold text-blue-600">Cherish</span>
+                        <span class="text-2xl font-bold text-gray-700">Ortho</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="appointments.html" class="text-gray-600 hover:text-blue-600">Appointments</a>
+                    <a href="shop.html" class="text-gray-600 hover:text-blue-600">Shop</a>
+                    <a href="education.html" class="text-gray-600 hover:text-blue-600">Resources</a>
+                    <a href="telemedicine.html" class="text-gray-600 hover:text-blue-600">Telemedicine</a>
+                    <a href="cart.html" class="text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="ml-1">0</span>
+                    </a>
+                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <!-- Checkout Form -->
+            <div class="lg:col-span-7">
+                <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">Checkout</h1>
+                
+                <!-- Shipping Information -->
+                <div class="mt-8">
+                    <h2 class="text-lg font-medium text-gray-900">Shipping Information</h2>
+                    <form id="shipping-form" class="mt-6 space-y-6">
+                        <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">First name</label>
+                                <input type="text" id="first-name" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Last name</label>
+                                <input type="text" id="last-name" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700">Phone number</label>
+                                <input type="tel" id="phone" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700">Address</label>
+                                <input type="text" id="address" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">City</label>
+                                <input type="text" id="city" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">County</label>
+                                <input type="text" id="county" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="mt-10">
+                    <h2 class="text-lg font-medium text-gray-900">Payment Method</h2>
+                    <div class="mt-6 space-y-4">
+                        <div class="relative bg-white border rounded-lg p-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="payment-method" value="mpesa" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3">
+                                    <span class="block text-sm font-medium text-gray-900">M-Pesa</span>
+                                    <span class="block text-sm text-gray-500">Pay via M-Pesa mobile money</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="relative bg-white border rounded-lg p-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="payment-method" value="card" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3">
+                                    <span class="block text-sm font-medium text-gray-900">Credit/Debit Card</span>
+                                    <span class="block text-sm text-gray-500">Pay with Visa, Mastercard, or other cards</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="mt-10 lg:mt-0 lg:col-span-5">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-lg font-medium text-gray-900">Order Summary</h2>
+                    
+                    <!-- Order Items -->
+                    <div class="mt-6 space-y-4" id="order-items">
+                        <!-- Order items will be dynamically added here -->
+                    </div>
+
+                    <!-- Order Totals -->
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Subtotal</p>
+                            <p class="text-sm font-medium text-gray-900" id="subtotal">KES 0.00</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Shipping</p>
+                            <p class="text-sm font-medium text-gray-900">KES 500.00</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4 flex items-center justify-between">
+                            <p class="text-base font-medium text-gray-900">Total</p>
+                            <p class="text-base font-medium text-gray-900" id="total">KES 0.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Place Order Button -->
+                    <div class="mt-6">
+                        <button id="place-order-btn" class="w-full bg-blue-600 text-white px-4 py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            Place Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Security Notice -->
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-lock text-gray-400 mr-2"></i>
+                        <p class="text-sm text-gray-500">
+                            Your payment information is encrypted and secure. We never store your card details.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contact Us</h3>
+                    <p class="text-gray-300">Email: info@cherishortho.com</p>
+                    <p class="text-gray-300">Phone: +254 XXX XXX XXX</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Services</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Shop</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-300">&copy; 2024 Cherish Orthopaedic Centre. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateOrderSummary() {
+            const orderItemsContainer = document.getElementById('order-items');
+            orderItemsContainer.innerHTML = '';
+
+            // Add each item to the summary
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'flex justify-between';
+                itemDiv.innerHTML = `
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-gray-900">${item.name}</p>
+                        <p class="mt-1 text-sm text-gray-500">Qty: ${item.quantity || 1}</p>
+                    </div>
+                    <p class="text-sm font-medium text-gray-900">
+                        KES ${((item.price_kes || 0) * (item.quantity || 1)).toLocaleString()}
+                    </p>
+                `;
+                orderItemsContainer.appendChild(itemDiv);
+            });
+
+            // Update totals
+            const subtotal = cart.reduce((sum, item) => 
+                sum + ((item.price_kes || 0) * (item.quantity || 1)), 0);
+            const shipping = 500;
+            const total = subtotal + shipping;
+
+            document.getElementById('subtotal').textContent = `KES ${subtotal.toLocaleString()}`;
+            document.getElementById('total').textContent = `KES ${total.toLocaleString()}`;
+        }
+
+        function validateForm() {
+            const form = document.getElementById('shipping-form');
+            return form.checkValidity();
+        }
+
+        function getFormData() {
+            return {
+                firstName: document.getElementById('first-name').value,
+                lastName: document.getElementById('last-name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                county: document.getElementById('county').value,
+                paymentMethod: document.querySelector('input[name="payment-method"]:checked').value
+            };
+        }
+
+        function placeOrder() {
+            if (!validateForm()) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            const orderData = {
+                items: cart,
+                shipping: getFormData(),
+                total: cart.reduce((sum, item) => 
+                    sum + ((item.price_kes || 0) * (item.quantity || 1)), 0) + 500
+            };
+
+            // TODO: Send order to backend
+            console.log('Placing order:', orderData);
+
+            // For demo purposes, show success and clear cart
+            alert('Order placed successfully! You will receive a confirmation email shortly.');
+            localStorage.removeItem('cart');
+            window.location.href = 'order-confirmation.html';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateOrderSummary();
+            document.getElementById('place-order-btn').addEventListener('click', placeOrder);
+        });
+    </script>
+</body>
+</html>
